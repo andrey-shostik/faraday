@@ -4,6 +4,7 @@ require 'json'
 class City
   API_KEY = '1ecd61a1ba5714cdc22ea4ea7f63ed23'
   K = 273.15
+
   attr_accessor :name
 
   def initialize(name = 'Kaniv')
@@ -11,9 +12,15 @@ class City
   end
 
   def say_weather
-    puts "now weather in #{@name}"
-    (conditions['main']['temp']) - K
+sleep 1
+    print "Now weather in #{@name}: "
+    conditions['main']['temp'] - K
   end
+
+	def say_country
+		print 'country '
+		conditions['sys']['country']
+	end
 
   private
   def conditions
@@ -35,3 +42,4 @@ end
 
 a = City.new
 puts a.say_weather
+puts a.say_country
