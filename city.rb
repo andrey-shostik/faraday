@@ -12,15 +12,15 @@ class City
   end
 
   def say_weather
-sleep 1
+    sleep 1
     print "Now weather in #{@name}: "
     conditions['main']['temp'] - K
   end
 
-	def say_country
-		print 'country '
-		conditions['sys']['country']
-	end
+  def say_country
+    print 'country '
+    conditions['sys']['country']
+  end
 
   private
   def conditions
